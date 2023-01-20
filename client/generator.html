@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="generator.css" />
+    <title>Generate a Reading</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <nav>
+          <div class="nav-container fixed-top">
+            <div class="logo">
+              <img src="openbook.png" alt="" />
+              <h1>openReading.</h1>
+            </div>
+            <ul id="nav-links">
+              <li class="nav-list">
+                <a href="#" class="nav-link">Readings</a>
+              </li>
+              <li class="nav-list"><a href="#">Lesson Plan</a></li>
+              <li class="nav-list"><a href="#">About</a></li>
+            </ul>
+          </div>
+        </nav>
+        <section id="hero">
+          <div class="hero-container">
+            <h1>TO GENERATE A TEXT, FILL OUT THE FORM BELOW.</h1>
+            <a href="#form"><i class="fa-solid fa-chevron-down"></i></a>
+          </div>
+        </section>
+      </div>
+    </header>
+    <main>
+      <section id="form">
+        <h2>Only the fields marked with ( * ) are mandatory.</h2>
+
+        <form action="">
+          <div class="field">
+            <label for="topic">What is the text about?</label>
+            <input
+              type="text"
+              name="topic" id="topic"
+              placeholder="The first humans on Mars..."
+            />
+          </div>
+          <div class="field">
+            <label for="words">How many words?</label>
+            <input type="text" name="words" id="words" placeholder="150..." />
+            <p class="helper">
+              * Please note this is a rough word count, not exact.
+            </p>
+          </div>
+          <div class="field">
+            <label for="age"
+              >Select the age range which corresponds to your students.</label
+            >
+            <select name="age" id="age">
+              <option value="Select an age range...">
+                Select an age range...
+              </option>
+              <option value="12-">Under 12</option>
+              <option value="12+">12-15</option>
+              <option value="15+">16-20</option>
+              <option value="21+">Over 21</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="level"
+              >How would you classify the level of your student?</label
+            >
+            <select name="level" id="level">
+              <option value="">Choose a level...</option>
+              <option value="beginners">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="language"
+              >In what language should the text be written?</label
+            >
+            <input type="text" name="language" id="language" placeholder="English..." />
+          </div>
+
+          <button type="Submit">Generate Text</button>
+        </form>
+      </section>
+
+      <section id="new-text">
+        <h1>PLEASE ALLOW UP TO 30 SECONDS FOR YOUR TEXT TO START APPEARING BELOW.</h1>
+        <div class="text-container" id="text-container">
+          <div class="user-prompt">
+            <p id="user-query">This is a placeholder for the user's prompt.</p>
+          </div>
+          <div class="text-response">
+            <p id="bot-response">This is a placeholder for the text response.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="main-content">
+        <div class="links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="#hero">Generate Materials</a></li>
+          </ul>
+        </div>
+        <div class="tech-info">
+          <p>
+            This project was made possible by leveraging the
+            <a href="https://openai.com/">OpenAI</a> ChatGPT3 model.
+          </p>
+        </div>
+        <div class="about-me">
+          To see more of my work, visit my portfolio
+          <a href="www.jamiecfurlong.com">here</a>
+        </div>
+      </div>
+      <div id="attribution">
+        <p>Website designed by Heroskin12</p>
+        <p>Art created with MidJourneyAI</p>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/5ed879b221.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
