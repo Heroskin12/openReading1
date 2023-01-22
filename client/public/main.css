@@ -33,7 +33,7 @@ a {
 /* Create the background for the header section */
 /* The header section includes the nav and hero text with buttons. */
 header {
-    background: url('./kids.png') no-repeat center center/cover;
+    background: url('kids.png') no-repeat center center/cover;
     background-position: fixed;
     height: 100vh;
 }
@@ -185,14 +185,13 @@ nav {
 #examples {
     margin-top: 30px;
 }
-
 .example {
     display: flex; 
     margin-top: 15px;   
 }
 
 .example-image {
-    background: url('./kid.jpg') no-repeat center center/cover;
+    background: url('kid.jpg') no-repeat center center/cover;
     height: 100px;
     width: 150px;
     border-radius: 20%;
@@ -276,6 +275,7 @@ footer #attribution {
     text-align: center;
     font-size: .9rem;
     color: #8396a5;
+    font-weight: ;
 }
 
 footer #attribution p {
