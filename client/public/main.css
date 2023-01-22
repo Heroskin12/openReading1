@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Define Variables */
+:root {
+    --primary-color: #DEB992;
+    --secondary-color: #fff;
+    --skinny-weight: 300;
+    --super-skinny-weight: 100;
+    --bold-weight: bold;
+}
+
+body {
+    color: #fff;
+    font-family: 'Heebo';
+}
+
+/* Utility Classes */
+h1, h2 {
+    color: var(--primary-color) !important;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Create the background for the header section */
+/* The header section includes the nav and hero text with buttons. */
+header {
+    background: url('./kids.png') no-repeat center center/cover;
+    background-position: fixed;
+    height: 100vh;
+}
+
+.header-container {
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.nav-container {
+    max-width: 1180px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #DEB992;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 74px;
+    padding-right: 10px;
+}
+
+#nav-links {
+    display: flex;
+    list-style-type: none;
+    font-weight: var(--bold-weight);
+}
+
+.nav-list {
+    padding: 0 10px;
+}
+
+
+/* Hero Section */
+.hero-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    background: rgba(0,0,0, .1)
+}
+
+.hero-container h1 {
+    font-size: 3rem;
+}
+
+.hero-container h2 {
+    font-size: 1.7rem;
+    margin-top: 20px;
+    font-weight: var(--skinny-weight);
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.hero-buttons button {
+    background: none;
+    border: 1px solid var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+#lesson-button {
+    margin-left: 10px;
+    background: var(--primary-color);
+    color: #333;
+    border: none;
+    font-weight: var(--super-skinny-weight);
+}
+
+/* Information Section */
+#info-section {
+    padding: 20px;
+    color: #fff;
+    background: #0D1D1D;
+}
+
+#info-section h1 {
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: var(--skinny-weight);
+    letter-spacing: 2px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info-1 {
+    margin-top: 10px;
+}
+
+.info-2, .info-3 {
+    margin-top: 10px;
+}
+
+.info p {
+    margin-top: 5px;
+    color: #8396a5;
+    font-weight: var(--skinny-weight);
+}
+
+/* Examples Section */
+#example-section {
+    padding: 30px;
+    color: #fff;
+    background: #061e24;
+}
+
+
+#example-section h1 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    font-weight: var(--skinny-weight);
+    letter-spacing: 2px;
+}
+
+#example-section p {
+    margin-top: 20px;
+    font-weight: var(--skinny-weight);
+    color: #afc0ce;
+    font-weight: var(--skinny-weight)
+}
+
+#examples {
+    margin-top: 30px;
+}
+
+.example {
+    display: flex; 
+    margin-top: 15px;   
+}
+
+.example-image {
+    background: url('./kid.jpg') no-repeat center center/cover;
+    height: 100px;
+    width: 150px;
+    border-radius: 20%;
+}
+
+.example-title {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.example-title i {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    
+}
+.example-title h2 {
+    margin-left: 20px;
+    padding: 30px 0;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    font-size: 1.3rem;
+    font-weight: var(--skinny-weight);
+}
+
+footer {
+    padding: 10px;
+    background: #0D1D1D;
+}
+
+footer #main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer #main-content div {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .links ul {
+    list-style-type: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #505355;
+    width: 80%;
+}
+
+footer .links ul li {
+    margin-top: 5px;
+}
+
+footer .links ul li a {
+    color: #8396a5;
+    font-size: 1rem;
+    font-weight: var(--skinny-weight);
+}
+
+footer .tech-info, footer .tech-info a, footer .about-me, footer .about-me a {
+    font-size: 1rem;
+    color: #8396a5;
+    font-weight: var(--skinny-weight);
+}
+
+footer .tech-info a, footer .about-me a {
+    color: var(--primary-color);
+    display: inline;
+}
+
+
+footer .about-me {    
+    padding-bottom: 20px;
+    border-bottom: 1px solid #505355;
+}
+footer #attribution {
+    margin-top: 10px;
+    text-align: center;
+    font-size: .9rem;
+    color: #8396a5;
+}
+
+footer #attribution p {
+    padding: 10px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    /* Make the navigation bar stack on mobile. */
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        padding-bottom: 15px;
+    }
+}
+
+/* To Do */
+/* Add an arrow image to the bottom of the landing page? 
+Change the fonts.
+Add a gradient to the header background color so it transitions more nicely into the next section.
+*/
