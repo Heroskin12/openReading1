@@ -33,20 +33,12 @@ a {
 /* Create the background for the header section */
 /* The header section includes the nav and hero text with buttons. */
 header {
-    background: url('kids.png') no-repeat center center/cover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('kids.png') no-repeat center center/cover;
     background-position: fixed;
     height: 100vh;
 }
 
-.header-container {
-    background: rgba(0, 0, 0, .4);
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;    
-}
+
 
 /* Navbar */
 nav {
@@ -95,7 +87,6 @@ nav {
     flex-direction: column;
     justify-content: center;
     height: 70vh;
-    background: rgba(0,0,0, .1)
 }
 
 .hero-container h1 {
@@ -275,7 +266,6 @@ footer #attribution {
     text-align: center;
     font-size: .9rem;
     color: #8396a5;
-    font-weight: ;
 }
 
 footer #attribution p {
