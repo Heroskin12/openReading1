@@ -63,6 +63,13 @@ nav {
     justify-content: center;
 }
 
+.logo a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+
 .logo img {
     height: 50px;
     width: 74px;
@@ -103,7 +110,7 @@ nav {
     margin-top: 20px;
 }
 
-.hero-buttons button {
+.hero-buttons a {
     background: none;
     border: 1px solid var(--secondary-color);
     color: var(--primary-color);
@@ -114,9 +121,9 @@ nav {
 #lesson-button {
     margin-left: 10px;
     background: var(--primary-color);
-    color: #333;
+    color: #333 !important;
     border: none;
-    font-weight: var(--super-skinny-weight);
+    font-weight: var(--bold-weight);
 }
 
 /* Information Section */
@@ -282,6 +289,13 @@ footer #attribution p {
     .logo {
         padding-bottom: 15px;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Make the navigation bar stack on mobile. */
+   .logo a {
+    flex-direction: row;
+   }
 }
 
 /* To Do */
