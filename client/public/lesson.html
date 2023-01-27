@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="generator.css" />
-    <title>Generate a Reading</title>
+    <title>Generate a Lesson Plan</title>
   </head>
   <body>
     <header>
@@ -20,16 +20,16 @@
             </div>
             <ul id="nav-links">
               <li class="nav-list">
-                <a href="#hero" class="nav-link">Readings</a>
+                <a href="generator.html" class="nav-link">Readings</a>
               </li>
-              <li class="nav-list"><a href="lesson.html">Lesson Plan</a></li>
+              <li class="nav-list"><a href="#hero">Lesson Plan</a></li>
               <li class="nav-list"><a href="about.html">About</a></li>
             </ul>
           </div>
         </nav>
         <section id="hero">
           <div class="hero-container">
-            <h1>TO GENERATE A TEXT, FILL OUT THE FORM BELOW.</h1>
+            <h1>TO GENERATE A LESSON PLAN, FILL OUT THE FORM BELOW.</h1>
             <a href="#form"><i class="fa-solid fa-chevron-down"></i></a>
           </div>
         </section>
@@ -41,24 +41,21 @@
 
         <form action="">
           <div class="field">
-            <label for="topic">What is the text about?</label>
+            <label for="topic">What is the lesson about?</label>
             <input
               type="text"
               name="topic" id="topic"
               placeholder="The first humans on Mars..."
             />
           </div>
+
           <div class="field">
-            <label for="words">How many words?</label>
-            <input type="text" name="words" id="words" placeholder="150..." />
-            <p class="helper">
-              * Please note this is a rough word count, not exact.
-            </p>
+            <label for="words">How many students are in the class?</label>
+            <input type="text" name="students" id="students" placeholder="10..." />
           </div>
+
           <div class="field">
-            <label for="age"
-              >Select the age range which corresponds to your students.</label
-            >
+            <label for="age">Select the age range which corresponds to your students.</label>
             <select name="age" id="age">
               <option value="Select an age range...">
                 Select an age range...
@@ -70,9 +67,7 @@
             </select>
           </div>
           <div class="field">
-            <label for="level"
-              >How would you classify the level of your student?</label
-            >
+            <label for="level">How would you classify the level of your student?</label>
             <select name="level" id="level">
               <option value="">Choose a level...</option>
               <option value="beginners">Beginner</option>
@@ -80,14 +75,23 @@
               <option value="advanced">Advanced</option>
             </select>
           </div>
+
           <div class="field">
-            <label for="language"
-              >In what language should the text be written?</label
-            >
+            <label for="length">How long is the class?</label>
+            <select name="length" id="length">
+              <option value="">Choose a time...</option>
+              <option value="60 minutes">60 minutes or less</option>
+              <option value="90 minutes">90 minutes</option>
+              <option value="120 minutes">120 minutes or more</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="language">What language are you teaching in the class?</label>
             <input type="text" name="language" id="language" placeholder="English..." />
           </div>
 
-          <button type="Submit">Generate Text</button>
+          <button type="Submit">Lesson Plan</button>
         </form>
       </section>
 
@@ -109,8 +113,8 @@
         <div class="links">
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="lesson.html">Generate a Lesson Plan</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="generator.html">Generate Readings</a></li>
           </ul>
         </div>
         <div class="tech-info">

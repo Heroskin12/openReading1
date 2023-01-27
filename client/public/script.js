@@ -59,11 +59,8 @@ function chatStripe(value) {
 const handleSubmit = async (e) => {
   e.preventDefault();
   const data = new FormData(form);
-  console.log(data.get("topic"));
-  console.log(data.get("age"));
-  console.log(data.get("level"));
-  console.log(data.get("words"));
-  console.log(data.get("language"));
+  console.log(data);
+  
 
   let level;
   if (data.get("level")=="beginners") {
@@ -76,26 +73,33 @@ const handleSubmit = async (e) => {
     level = "use fluent and advanced words."
   }
 
-  // user's chat stripe
-  const visiblePrompt = `You have requested a text about ${data.get('topic')} for  ${data.get('level')} students in ${data.get("language")}. These students are roughly ${data.get('age')}-year-olds. In total, the text should have a word count of around ${data.get('words')}.`
+  let visiblePrompt;
+  let botPrompt;
+  if (data.get('length')) {
+    visiblePrompt = `You have requested a plan for a ${data.get('language')} lesson about ${data.get('topic')}. The lesson is roughly ${data.get('length')} and there are ${data.get('students')} students at ${data.get('level')} level. The students are roughly ${data.get('age')} years-old.`;
 
-  const botPrompt = `Write a reading comprehension based on the following information:
-  Age of reader: ${data.get('age')}
-  ${data.get('language')} ability of reader: ${level} 
-  Topic of Text: ${data.get('topic')} 
-  Language of Text: ${data.get('language')}
-  Number of Words: ${data.get('words')}
+    botPrompt = `Write a lesson plan for a ${data.get('language')} class. The lesson plan should be about ${data.get('topic')}. The lesson plan should take roughly ${data.get('length')} to complete. The lesson plan should be designed for ${data.get('students')} who are ${data.get('age')} years-old. The lesson plan should also be designed to consider that the students are at a ${data.get('level')} level.`
+  }
+  else {
+    visiblePrompt = `You have requested a text about ${data.get('topic')} for  ${data.get('level')} students in ${data.get("language")}. These students are roughly ${data.get('age')}-year-olds. In total, the text should have a word count of around ${data.get('words')}.`;
   
-  In addition to the text, add a vocabulary exercise in which students have to match the word with the meaning and 5 multiple-choice questions. These questions are not part of the ${data.get('words')} word count.
-  
-  Lastly, make the language ${level}`
+    // The prompt that is sent to the API
+    botPrompt = `Write a reading comprehension based on the following information:
+    Age of reader: ${data.get('age')}
+    ${data.get('language')} ability of reader: ${level} 
+    Topic of Text: ${data.get('topic')} 
+    Language of Text: ${data.get('language')}
+    Number of Words: ${data.get('words')}
+    
+    In addition to the text, add a vocabulary exercise in which students have to match the word with the meaning and 5 multiple-choice questions. These questions are not part of the ${data.get('words')} word count.
+    
+    Lastly, make the language ${level}`
 
-  console.log(botPrompt);
+  }
 
-
+  // Provides user feedback confirming their query.
 
   userQuery.textContent = visiblePrompt;
-
   form.reset();
 
   //bot's chatStripe
@@ -118,13 +122,8 @@ const handleSubmit = async (e) => {
   botResponse.innerHTML = '';
 
   if(response.ok) {
-    console.log(response)
     const data = await response.json();
-    console.log(data)
     const parsedData = data.bot.trim();
-    console.log(parsedData)
-
-
     typeText(botResponse, parsedData);
   } else {
     const err = await response.text();
